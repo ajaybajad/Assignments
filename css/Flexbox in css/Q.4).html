@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Section</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+        html,body{
+            margin: 0;
+        }
+        .container{
+            display: flex;
+            align-items: center;
+            width: 962px;
+            height: 427px;
+            top: 25px;
+            left: -8px;
+            padding: 32px 48px 32px 48px;
+            gap: 32px;
+            background-color:  #F4F2FD;
+            ;
+        }
+        .item{
+            flex-direction: column;
+            gap: 32px;
+            padding: 32px;
+            border-radius: 8px;
+            display: flex;
+            width: 262px;
+            height: 363px;
+            gap: 32px;
+            background-color: #fff;
+            box-shadow: 0px 1px 10px 0px #00000040;
+
+        }
+        .card{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 306px;
+            gap: 46px;
+        }
+        .card-header{
+            font-family: nunito;
+            width: 198px;
+            height: 108px;
+            gap: 16px;
+        }
+        h1,h3{
+            margin: 0;
+            padding: 4px 8px 4px 8px;
+        }
+        .card-header h1{
+            height: 32px;
+            font-family: nunito;
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 32px;
+            color:#202842
+        }
+        .card-header h3{
+            height: 16px;
+            font-weight: 500;
+            font-family: nunito;
+            font-size: 16px;
+            line-height: 16px;
+            color:#202842;
+        }
+        .price{
+            width: 58px;
+            height: 36px;
+            font-weight: 400;
+            padding: 10px 8px 0px 8px;
+            font-family: sans-serif;
+            line-height: 36px;
+            font-size: 36px;
+            color:#202842;
+        }
+        .plan-details{
+            display: flex;
+            flex-direction: column;
+            height: 112px;
+            width: 198px;
+            padding: 0px 0px 0px 8px;
+            font-family: nunito;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 16px;
+            color: #202842;
+        }
+        .items{
+            display: flex;
+            align-items: center;
+            height: 28px;
+        }
+        img{
+            width: 22px;
+            height: 22px;
+        }
+        .items span{
+            margin-left: 8px;
+            color: #202842;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 16px;
+            font-family: nunito;
+        }
+        button{
+            width: 156px;
+            text-align: center;
+            height: 38px;
+            border-radius: 50px;
+            background-color: #202842;
+            color: #ffffff;
+            font-family: nunito;
+            font-weight: 600;
+            line-height: 22px;
+            font-size: 16px;
+        }
+        .bt{
+            display: flex;
+            gap: 10px;
+            width: 100%;
+            justify-content: center;
+        }
+        #item2{
+            background-color: #202842;
+            color: #ffffff;
+        }
+        #card2-text{
+            color: #ffffff;
+        }
+        #btn2{
+            background-color: #ffffff;
+            color: #202842;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">
+            <div class="card">
+                <div class="card-header">
+                    <h1>Free Plan</h1>
+                    <h3>For Personal</h3>
+                    <div class="price">$0</div>
+                </div>
+                <div class="plan-details">
+                    <div class="plan-deatils items">
+                        <img src="tick.png">
+                        <span>1 users</span>
+                    </div>
+                    <div class="plan-deatils items">
+                        <img src="tick.png">
+                        <span>Web mails</span>
+                    </div>
+                    <div class="plan-deatils items">
+                        <img src="tick.png">
+                        <span>Responsive Website</span>
+                    </div>
+                    <div class="plan-deatils items">
+                        <img src="tick.png">
+                        <span>Free SSL</span>
+                    </div>
+                </div>            
+                <div class="bt">
+                <button>Suscribe now</button>   
+            </div>
+            </div>
+        </div>
+        <div class="item" id="item2">
+            <div class="card">
+                <div class="card-header">
+                    <h1 id="card2-text">Basic Plan</h1>
+                    <h3 id="card2-text">For Small Bussiness</h3>
+                    <div id="card2-text" class="price">$29</div>
+                </div>
+                <div class="plan-details">
+                    <div class="plan-deatils items">
+                        <img src="tick1.png">
+                        <span id="card2-text">4 users</span>
+                    </div>
+                    <div class="plan-deatils items">
+                        <img src="tick1.png">
+                        <span id="card2-text">10 Web mails</span>
+                    </div>
+                    <div class="plan-deatils items">
+                        <img src="tick1.png">
+                        <span id="card2-text">Responsive Website</span>
+                    </div>
+                    <div class="plan-deatils items">
+                        <img src="tick1.png">
+                        <span id="card2-text">Free SSL</span>
+                    </div>
+                </div>            
+                <div class="bt">
+                <button id="btn2">Suscribe now</button>   
+            </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="card">
+                <div class="card-header">
+                    <h1>Pro Plan</h1>
+                    <h3>For enterprise</h3>
+                    <div class="price">$48</div>
+                </div>
+                <div class="plan-details">
+                    <div class="plan-deatils items">
+                        <img src="tick.png">
+                        <span>Unlimited users</span>
+                    </div>
+                    <div class="plan-deatils items">
+                        <img src="tick.png">
+                        <span>Unlimited Web mails</span>
+                    </div>
+                    <div class="plan-deatils items">
+                        <img src="tick.png">
+                        <span>Responsive Website</span>
+                    </div>
+                    <div class="plan-deatils items">
+                        <img src="tick.png">
+                        <span>Free SSL + SEO</span>
+                    </div>
+                </div>            
+                <div class="bt">
+                <button>Suscribe now</button>   
+            </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
