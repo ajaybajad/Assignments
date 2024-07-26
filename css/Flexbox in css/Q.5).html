@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>IRCTC</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+        html,body{
+            margin: 0;
+            font-family: inter;
+        }
+        .main{
+            display: flex;
+            width: 100%;
+            height: 100vh;
+        }
+        .left-section{
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+        }
+        .right-section{
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+            height: 100vh;
+        }
+        .logo{
+            position: relative;
+            width: 168.31px;
+            height: 81.11px;
+        }
+        .logo img{
+            height: 81.11px;
+            width: 81.11px;
+        }
+        #second-img{
+            position: absolute;
+            left: 98.31px;
+        }
+        img{
+            height: 100vh;
+            width: 100%;
+        }
+        .nav{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            margin: 40px 60px;
+            line-height: 34px;
+        }
+        .menu{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+        }
+        ul{
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            color: #333333;
+        }
+        .btn-login{
+            background-color: #FB792B;
+            border-radius: 5.07px;
+            padding: 10.14px 15.21px 10.14px 15.21px;
+            color: #ffffff;
+            font-size: 15.21px;
+            border: none;
+        }
+        .btn-reg{
+            background-color: #ffffff;
+            border-radius: 5.07px;
+            padding: 10.14px 15.21px 10.14px 15.21px;
+            color: #333333;
+            font-size: 15.21px;
+            border: 1px solid #333333;
+        }
+        .heading{
+            width: 438px;
+            height: 118.08px;
+            position: absolute;
+            top: 180.06px;
+            left: 101.39px;
+            font-family: inter;
+        }
+        .main-heading{
+            margin: 0;
+            height: 59px;
+            font-size: 25.67px;
+            font-weight: 700;
+            line-height: 58.9px;
+            color:#333333;
+        }
+        .sub-heading{
+            line-height: 39.27px;
+            font-size: 32.44px;
+            font-family: inter;
+            font-weight: 500;
+            word-spacing: 8px;
+        }
+        .main-heading h1{
+            font-size: 48.67px;
+        }
+        #first-txt{
+            color: #01BB0A;
+            ;
+        }
+        #second-txt{
+            color: #FB792B;
+            ;
+        }
+        #third-txt{
+            color: #213D77;
+            ;
+        }
+        .button-container {
+            position: absolute;
+            display: flex;
+            gap: 20.28px;
+            top: 422.79px;
+            left: 101.39px;
+        }
+        .button {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            background-color: white;
+        }
+        .button.book-ticket {
+            background-color: #1b3e7a;
+            color: white;
+            border-color: #f1c40f;
+        }
+        .button.pnr-status {
+            border-color: #ddd;
+        }
+        .button.charts-vacancy {
+            border-color: #ddd;
+        }
+        .button i {
+            margin-right: 5px;
+        }
+        .container {
+            position: absolute;
+            top: 518.1px;
+            left: 101.39px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 520px;
+            width: 100%;
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .row:last-child {
+            margin-bottom: 0;
+        }
+        .row i {
+            margin-left: 2dvh;
+        }
+        .row .content {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+        .content select, .content input {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+        .search-button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .search-button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            display: inline-flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        .search-button i {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="left-section">
+            <div class="nav">
+               <div class="logo">
+                <img src="logo.png">
+                <img id="second-img" src="logo1.png">
+            </div>
+            <div class="menu">
+                <ul>Ask Disha
+                    <button class="btn-login">Login</button>
+                </ul>
+                <ul>Contact Us
+                    <button class="btn-reg">Register</button>
+                </ul>
+                <ul>Alert
+                    <button class="btn-reg">Agent Login</button>
+                </ul>
+            </div> 
+            </div> 
+                <div class="heading">
+                    <div class="main-heading">
+                        <h1>Indian Railways</h1>
+                        <div class="sub-heading">
+                            <span id="first-txt">Safety </span>
+                            <span id="second-txt">Security</span>
+                            <span id="third-txt">Punctuality</span>
+                        </div>
+               </div>
+            </div>
+            <div class="button-container">
+                <a href="#" class="button book-ticket">
+                    <i class="fa-solid fa-ticket"></i>
+                    BOOK Ticket
+                </a>
+                <a href="#" class="button pnr-status">
+                    <i class="fa-solid fa-check"></i>
+                    PNR Status
+                </a>
+                <a href="#" class="button charts-vacancy">
+                    <i class="fas fa-chart-bar"></i>
+                    Charts / Vacancy
+                </a>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="content">
+                        <i class="fas fa-train"></i>
+                        <select>
+                            <option>Bangalore</option>
+                            <option>Delhi</option>
+                            <option>Mumbai</option>
+                            <option>Chennai</option>
+                            <option>Kolkata</option>
+                        </select>
+                    </div>
+                    <i class="fas fa-exchange-alt"></i>
+                    <div class="content">
+                        <i class="fas fa-train"></i>
+                        <select>
+                            <option>Kasaragod</option>
+                            <option>Trivandrum</option>
+                            <option>Hyderabad</option>
+                            <option>Ahmedabad</option>
+                            <option>Pune</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="content">
+                        <i class="fas fa-calendar-alt"></i>
+                        <input type="date">
+                    </div>
+                    <div class="content">
+                        <i class="fas fa-user"></i>
+                        <select>
+                            <option>3A</option>
+                            <option>2A</option>
+                            <option>1A</option>
+                            <option>SL</option>
+                            <option>2S</option>
+                        </select>
+                    </div>
+                    <div class="content">
+                        <i class="fas fa-chair"></i>
+                        <select>
+                            <option>TATKAL</option>
+                            <option>GENERAL</option>
+                            <option>PREMIUM TATKAL</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="search-button-container">
+                    <a href="#" class="search-button">
+                        Search Train
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>        
+        <div class="right-section">
+            <img src="image.png">
+        </div>
+</body>
+</html>
