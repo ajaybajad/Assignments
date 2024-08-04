@@ -1,0 +1,16 @@
+:root{
+    --primaryBtn-color: #00b7ff;
+    --secondaryBtn-color: #6c757d;
+    --txt-color: #fff;
+}
+
+#primaryBtn{
+    background-color: var(--primaryBtn-color);
+    color: var(--txt-color);
+    border: none;
+}
+#secondaryBtn{
+    background-color: var(--secondaryBtn-color);
+    color: var(--txt-color);
+    border: none;
+}
