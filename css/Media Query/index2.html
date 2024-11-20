@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2</title>
+    <style>
+        .gallary{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .gallary-img{
+            width: 30%;
+        }
+        @media only screen and (max-width: 800px) {
+            .gallary{
+                display: block;
+            }
+            .gallary-img{
+                width: 48%;
+            }
+        }
+        @media only screen and (max-width: 500px) {
+            .gallary{
+                display: flex;
+                flex-direction: column;
+            }
+            .gallary-img{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="gallary">
+        <img class="gallary-img" src="/552-200x300.jpg"/>
+        <img class="gallary-img" src="/552-200x300.jpg"/>
+        <img class="gallary-img" src="/552-200x300.jpg"/>   
+    </main>
+</body>
+</html>
