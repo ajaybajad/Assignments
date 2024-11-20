@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Append Child with Loop Example</title>
+</head>
+<body>
+    <h1>Favorite Fruits</h1>
+    <ul id="fruitsList">
+        <!-- List items will be appended here -->
+    </ul>
+    <button onclick="addFruits()">Add Fruits</button>
+
+    <script>
+        function addFruits() {
+            const fruits = ["Apple", "Banana", "Cherry", "Date", "Elderberry"];
+            const fruitsList = document.getElementById("fruitsList");
+
+            // Clear the list each time the button is clicked
+            fruitsList.innerHTML = "";
+
+            // Loop through the array of fruits
+            fruits.forEach(fruit => {
+                // Create a new <li> element for each fruit
+                const listItem = document.createElement("li");
+
+                // Set the text of the <li> element
+                listItem.innerText = fruit;
+
+                // Append the <li> to the <ul>
+                fruitsList.appendChild(listItem);
+            });
+        }
+    </script>
+</body>
+</html>
