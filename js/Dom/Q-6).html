@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Carousel</title>
+    <style>
+        /* Add basic styling */
+        .carousel {
+            width: 300px;
+            overflow: hidden;
+            position: relative;
+            border: 2px solid #ccc;
+        }
+
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-images img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .carousel-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .carousel-buttons button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .carousel-buttons button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+
+<body>
+    <h4>Q6. Create a simple image carousel using HTML and JavaScript, Design a basic HTML structure with images,
+        and use JavaScript to implement functionality that allows users to navigate through the images.</h4>
+    <div class="carousel">
+        <div class="carousel-images">
+            <img src="https://wallpapers.com/images/featured/avengers-vm16xv4a69smdauy.jpg" alt="Image 1">
+            <img src="https://static1.srcdn.com/wordpress/wp-content/uploads/2023/11/original-avengers-team-cast-in-the-mcu.jpg"
+                alt="Image 2">
+            <img src="https://img10.hotstar.com/image/upload/f_auto/sources/r1/cms/prod/48/1370048-i-7fd17e1f03d6"
+                alt="Image 3">
+        </div>
+        <div class="carousel-buttons">
+            <button id="prevBtn">&lt;</button>
+            <button id="nextBtn">&gt;</button>
+        </div>
+    </div>
+
+    <script>
+        // Select DOM elements
+        const carouselImages = document.querySelector('.carousel-images');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        // Initialize variables
+        let currentIndex = 0;
+        const totalImages = document.querySelectorAll('.carousel-images img').length;
+        const autoplayInterval = 3000; // 3 seconds (adjust as needed)
+        let autoplay; // For controlling the autoplay
+
+        // Function to update the carousel position
+        function updateCarousel() {
+            const offset = -currentIndex * 300; // Image width
+            carouselImages.style.transform = `translateX(${offset}px)`;
+        }
+
+        // Function to move to the next image
+        function showNextImage() {
+            currentIndex = (currentIndex + 1) % totalImages; // Loop to the beginning if at the end
+            updateCarousel();
+        }
+
+        // Function to move to the previous image
+        function showPrevImage() {
+            currentIndex = (currentIndex - 1 + totalImages) % totalImages; // Loop to the end if at the beginning
+            updateCarousel();
+        }
+
+        // Add button event listeners
+        nextBtn.addEventListener('click', () => {
+            clearAutoplay(); // Prevent double changes due to buttons
+            showNextImage();
+            startAutoplay(); // Restart autoplay after manual interaction
+        });
+
+        prevBtn.addEventListener('click', () => {
+            clearAutoplay();
+            showPrevImage();
+            startAutoplay();
+        });
+
+        // Autoplay setup
+        function startAutoplay() {
+            autoplay = setInterval(showNextImage, autoplayInterval);
+        }
+
+        // Clear autoplay (e.g., on user interaction)
+        function clearAutoplay() {
+            clearInterval(autoplay);
+        }
+
+        // Start autoplay when the page loads
+        startAutoplay();
+    </script>
+</body>
+
+</html>
