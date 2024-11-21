@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      font-size: 16px;
+      margin-right: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding: 0;
+    }
+
+    li {
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .delete-btn {
+      margin-left: 10px;
+      background-color: red;
+      color: white;
+      border: none;
+      cursor: pointer;
+      padding: 5px 10px;
+    }
+
+    .delete-btn:hover {
+      background-color: darkred;
+    }
+  </style>
+</head>
+<body>
+  <!-- Input Field and Button -->
+  <input type="text" id="itemInput" placeholder="Enter item">
+  <button onclick="addItem()">Add Item</button>
+
+  <!-- Shopping List -->
+  <ul id="shoppingList"></ul>
+
+  <script>
+    // Function to add an item to the list
+    function addItem() {
+      const input = document.getElementById('itemInput');
+      const itemText = input.value.trim();
+
+      if (itemText === '') {
+        return; // Do nothing if the input is empty
+      }
+
+      // Create a new list item
+      const li = document.createElement('li');
+      li.style.listStyleType = "circle";
+      li.textContent = itemText;
+
+      // Create the Delete button
+      const deleteBtn = document.createElement('button');
+      deleteBtn.textContent = 'Delete';
+      deleteBtn.classList.add('delete-btn');
+
+      // Add event listener to the delete button
+      deleteBtn.addEventListener('click', () => {
+        li.remove(); // Remove the item when clicked
+      });
+
+      // Append the delete button to the list item
+      li.appendChild(deleteBtn);
+
+      // Append the list item to the shopping list
+      document.getElementById('shoppingList').appendChild(li);
+
+      // Clear the input field and focus it for the next item
+      input.value = '';
+      input.focus();
+    }
+
+    // Optional: Allow pressing 'Enter' to add items
+    document.getElementById('itemInput').addEventListener('keypress', function(event) {
+      if (event.key === 'Enter') {
+        addItem();
+      }
+    });
+  </script>
+
+</body>
+</html>
