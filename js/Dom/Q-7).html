@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Dropdown Menu</title>
+  <style>
+    /* Basic styling for the body */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    a:hover {
+      background-color: #575757;
+      color: white;
+    }
+
+    /* Styling for the dropdown menu */
+    .dropdown-menu {
+      display: none; /* Initially hidden */
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: block; /* Show on hover */
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Menu -->
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li class="dropdown">
+        <a href="#">Services</a>
+        <!-- Dropdown Menu -->
+        <ul class="dropdown-menu">
+          <li><a href="#">Submenu 4</a></li>
+          <li><a href="#">Submenu 5</a></li>
+          <li><a href="#">Submenu 6</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <script>
+    // Select all dropdown menu items
+    const dropdowns = document.querySelectorAll('.dropdown');
+
+    // Add event listeners to each dropdown for hover events
+    dropdowns.forEach(dropdown => {
+      const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+
+      // Show the dropdown when the mouse enters
+      dropdown.addEventListener('mouseenter', () => {
+        dropdownMenu.style.display = 'block';
+      });
+
+      // Hide the dropdown when the mouse leaves
+      dropdown.addEventListener('mouseleave', () => {
+        dropdownMenu.style.display = 'none';
+      });
+    });
+  </script>
+
+</body>
+</html>
